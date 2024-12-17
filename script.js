@@ -4,12 +4,12 @@ Description: Determine if a given meter reading (in kWh) is even or odd. If the 
 suggest a discount code 'EVENPOWER10'. If it's odd, suggest 'ODDSAVER5'.
 Input Example: meter_reading = 452
 Expected Output: Even reading, use discount code: EVENPOWER10
-*/ 
+*/
 let meterReading = 451;
-if(meterReading%2==0){
+if (meterReading % 2 == 0) {
     console.log('DISCOUNT CODE: EVENPOWER10');
 }
-else{
+else {
     console.log('DISCOUNT CODE: ODDSAVERS');
 }
 
@@ -21,12 +21,12 @@ Input Example: Celsius = 25
 Expected Output: Temperature: 77°F 
 */
 let celsius = 44;
-if(celsius){
-let  fahrenheit = (celsius * 9/5) + 32
-console.log(`Temperature: ${fahrenheit}F`);
+if (celsius) {
+    let fahrenheit = (celsius * 9 / 5) + 32
+    console.log(`Temperature: ${fahrenheit}F`);
 }
-else{
-console.log('Enter correct Value');
+else {
+    console.log('Enter correct Value');
 }
 
 /**
@@ -36,19 +36,23 @@ Shipping', divisible by 5 gives 'Cashback', and divisible by both gives 'Free Sh
 Input Example: order_number = 15
 Expected Output: Free Shipping and Cashback
 */
-let orderID = 123456;
-if(orderID%3==0 && orderID%5==0 ){
+let orderID = 12345;
+if (orderID % 3 == 0 && orderID % 5 == 0) {
     console.log(`You are Eligible For FREE SHIPPING and You Got a CASH BACK of 20 Rupees`);
 }
-else if(orderID%5==0){
-    console.log('You Got a CASHBACK of 20 Rupees');
+else {
+    if (orderID % 5 == 0) {
+        console.log('You Got a CASHBACK of 20 Rupees');
+    } else {
+        if ((orderID % 3 == 0)) {
+            console.log('You are Eligibile for FREE SHIPPING');
+        }
+        else {
+            console.log('your ORDERID is not divisible by 3 and 5');
+        }
+    }
 }
-else if(orderID%3==0){
-    console.log('You are Eligibile for FREE SHIPPING');
-}
-else{
-    console.log('your ORDERID is not divisible by 3 and 5');
-}
+
 
 /**
 Task: Personalized Greeting System
@@ -58,24 +62,30 @@ Input Example: current_time = '2 PM'
 Expected Output: Good Afternoon!  
 */
 let time = 12;
-let period  = 'PM';
-if((period==='AM')&&(time>=6 && time<12)){
+let period = 'PM';
+if ((period === 'AM') && (time >= 6 && time < 12)) {
     console.log('GOOD MORNING')
 }
-else if((period==='PM')&&(time==12 || (time>=0 && time<5))){
-    console.log('GOOD AFTERNOON');
-}
-else if((period==='PM')&&(time>5 && time<9)){
-    console.log('GOOD EVENING');
-}
-else if((period==='PM')&&(time>=9&& time<12)){
-    console.log('GOOD NIGHT');
-}
-else if((period==='AM')&&(time>=0&& time<6)){
-    console.log('GOOD NIGHT');
-}
-else{
-    console.log('ENTER THE TIME IN 12 Hours FORMAT')
+else {
+    if ((period === 'PM') && (time == 12 || (time >= 0 && time < 5))) {
+        console.log('GOOD AFTERNOON');
+    } else {
+        if ((period === 'PM') && (time > 5 && time < 9)) {
+            console.log('GOOD EVENING');
+        }
+        else {
+            if ((period === 'PM') && (time >= 9 && time < 12)) {
+                console.log('GOOD NIGHT');
+            } else {
+                if ((period === 'AM') && (time >= 0 && time < 6)) {
+                    console.log('GOOD NIGHT');
+                }
+                else {
+                    console.log('ENTER THE TIME IN 12 Hours FORMAT')
+                }
+            }
+        }
+    }
 }
 /**
 Task: FizzBuzz (Event Alert System)
@@ -85,18 +95,20 @@ otherwise 'No team assigned'.
 Input Example: event_number = 30
 Expected Output: Handled by Special Team
 */
-let eventNumber = 30;
-if(eventNumber%3==0 && eventNumber%5==0 ){
+let eventNumber = 15;
+if (eventNumber % 3 == 0 && eventNumber % 5 == 0) {
     console.log('Handeled By special Team');
 }
-else if(eventNumber%5==0){
-    console.log('Handled By B team');
-}
-else if(eventNumber%3==0){
-    console.log('Handled by A team');
-}
-else{
-    console.log('The event Number doesnt divisible by 3 and 5');
+else {
+    if (eventNumber % 5 == 0) {
+        console.log('Handled By B team');
+    } else {
+        if (eventNumber % 3 == 0) {
+            console.log('Handled by A team');
+        } else {
+            console.log('The event Number doesnt divisible by 3 and 5');
+        }
+    }
 }
 
 /**
@@ -107,14 +119,16 @@ Input Example: speed = 75
 Expected Output: Warning: Close to Overspeeding
 */
 let speed = 100;
-if(speed<60 ){
+if (speed < 60) {
     console.log('Normal Spped');
 }
-else if(speed>60 && speed<80){
-    console.log('Warning: Close to Overspeeding');
-}
-else{
-    console.log('OverSpeed!: Penality Applied');
+else {
+    if (speed > 60 && speed < 80) {
+        console.log('Warning: Close to Overspeeding');
+    }
+    else {
+        console.log('OverSpeed!: Penality Applied');
+    }
 }
 
 /*        
@@ -126,24 +140,31 @@ Expected Output: Grade: A (Excellent)*
 
 */
 let score = 65;
-if(score>=90 && score<=100 ){
+if (score >= 90 && score <= 100) {
     console.log('Grade: A+');
 }
-else if(score>=80 && score<=89){
-    console.log('Grade: A');
+else {
+    if (score >= 80 && score <= 89) {
+        console.log('Grade: A');
+    } else {
+        if (score >= 70 && score <= 79) {
+            console.log('Grade: B');
+        }
+        else {
+            if (score >= 60 && score <= 69) {
+                console.log('Grade: C');
+            }
+            else {
+                if (score < 60) {
+                    console.log('Grade: F');
+                } else {
+                    console.log('Please Enter the Marks Between 0 to 100');
+                }
+            }
+        }
+    }
 }
-else if(score>=70 && score<=79){
-    console.log('Grade: B');
-}
-else if(score>=60 && score<=69){
-    console.log('Grade: C');
-}
-else if(score<60){
-    console.log('Grade: F');
-}
-else{
-    console.log('Please Enter the Marks Between 0 to 100');
-}
+//
 
 /**
 Task: ATM Withdrawal Validator
@@ -156,10 +177,10 @@ Expected Output: Insufficient funds!
 let balance = 1000;
 let withdrawlAmount = 600
 
-if(balance> withdrawlAmount || balance== withdrawlAmount){
-    console.log(`TRANSACTION SUCCESSFULL: You have Withdrawn ${withdrawlAmount} rupees and Your Current balance is ${balance-withdrawlAmount}`)
+if (balance > withdrawlAmount || balance == withdrawlAmount) {
+    console.log(`TRANSACTION SUCCESSFULL: You have Withdrawn ${withdrawlAmount} rupees and Your Current balance is ${balance - withdrawlAmount}`)
 }
-else{
+else {
     console.log('INSUFFICIENT FUNDS: Your Withdrawl amount is greaterthan your Balance ')
 }
 
@@ -170,17 +191,20 @@ $500-$1000 (10% discount), below $500 (no discount).
 Input Example: purchase_amount = 1200
 Expected Output: Discounted price: $960
 */
-let purchaseAmount = 1335;
+let purchaseAmount = 1355;
 
-if(purchaseAmount>1000){
-    console.log(`You have Purchased greaterthan 1000$, You have got 20% discount. The Final price is ${purchaseAmount- purchaseAmount*(20/100)}`)
+if (purchaseAmount > 1000) {
+    console.log(`You have Purchased greaterthan 1000$, You have got 20% discount. The Final price is ${purchaseAmount - purchaseAmount * (20 / 100)}`)
 }
-else if(purchaseAmount>=500 && purchaseAmount<=1000){
-        console.log(`You have Purchased between 500$ to 1000$, You have got 10% discount. The Final price is ${purchaseAmount- purchaseAmount*(10/100)}`)
+else {
+    if (purchaseAmount >= 500 && purchaseAmount <= 1000) {
+        console.log(`You have Purchased between 500$ to 1000$, You have got 10% discount. The Final price is ${purchaseAmount - purchaseAmount * (10 / 100)}`)
+    }
+    else {
+        console.log('You Purchased Lessthan 500$, You got NO DISCOUNT')
+    }
 }
-else{
-    console.log('You Purchased Lessthan 500$, You got NO DISCOUNT')
-}
+
 
 /**
 Task: Movie Ticket Price Calculator (Dynamic Pricing System)
@@ -189,15 +213,19 @@ Input Example: age = 65
 Expected Output: Ticket price: $7
 */
 let age = 65;
-if(age>60 && age<=100){
+if (age > 60 && age <= 100) {
     console.log('Ticket Price: $7')
 }
-else if(age>=12 && age<=60){
-    console.log('Ticket Price: $10')
-}
-else if(age<12){
-    console.log('Ticket Price: $5')
-}
-else{
-    console.log('Enter the AGE between 0 to 100')
+else {
+    if (age >= 12 && age <= 60) {
+        console.log('Ticket Price: $10')
+    }
+    else {
+        if (age < 12) {
+            console.log('Ticket Price: $5')
+        }
+        else {
+            console.log('Enter the AGE between 0 to 100')
+        }
+    }
 }

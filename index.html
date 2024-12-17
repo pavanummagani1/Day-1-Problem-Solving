@@ -93,25 +93,31 @@
     <pre>
         <b>CODE</b>
         <pre>
-            let time = +prompt();
-            let period  = prompt();
-            if((period==='AM')&&(time>=6 && time<12)){
+            let time = 12;
+            let period = 'PM';
+            if ((period === 'AM') && (time >= 6 && time < 12)) {
                 console.log('GOOD MORNING')
             }
-            else if((period==='PM')&&(time==12 || (time>=0 && time<5))){
-                console.log('GOOD AFTERNOON');
-            }
-            else if((period==='PM')&&(time>5 && time<9)){
-                console.log('GOOD EVENING');
-            }
-            else if((period==='PM')&&(time>=9&& time<12)){
-                console.log('GOOD NIGHT');
-            }
-            else if((period==='AM')&&(time>=0&& time<6)){
-                console.log('GOOD NIGHT');
-            }
-            else{
-                console.log('ENTER THE TIME IN 12 Hours FORMAT')
+            else {
+                if ((period === 'PM') && (time == 12 || (time >= 0 && time < 5))) {
+                    console.log('GOOD AFTERNOON');
+                } else {
+                    if ((period === 'PM') && (time > 5 && time < 9)) {
+                        console.log('GOOD EVENING');
+                    }
+                    else {
+                        if ((period === 'PM') && (time >= 9 && time < 12)) {
+                            console.log('GOOD NIGHT');
+                        } else {
+                            if ((period === 'AM') && (time >= 0 && time < 6)) {
+                                console.log('GOOD NIGHT');
+                            }
+                            else {
+                                console.log('ENTER THE TIME IN 12 Hours FORMAT')
+                            }
+                        }
+                    }
+                }
             }
         </pre>
     </pre>
@@ -129,18 +135,20 @@
     <pre>
         <b>CODE</b>
         <pre>
-            let eventNumber = +prompt();
-            if(eventNumber%3==0 && eventNumber%5==0 ){
+            let eventNumber = 15;
+            if (eventNumber % 3 == 0 && eventNumber % 5 == 0) {
                 console.log('Handeled By special Team');
             }
-            else if(eventNumber%5==0){
-                console.log('Handled By B team');
-            }
-            else if(eventNumber%3==0){
-                console.log('Handled by A team');
-            }
-            else{
-                console.log('The event Number doesnt divisible by 3 and 5');
+            else {
+                if (eventNumber % 5 == 0) {
+                    console.log('Handled By B team');
+                } else {
+                    if (eventNumber % 3 == 0) {
+                        console.log('Handled by A team');
+                    } else {
+                        console.log('The event Number doesnt divisible by 3 and 5');
+                    }
+                }
             }
         </pre>
     </pre>
@@ -157,15 +165,17 @@
     <pre>
         <b>CODE</b>
         <pre>
-            let speed = +prompt();
-            if(speed<60 ){
+            let speed = 100;
+            if (speed < 60) {
                 console.log('Normal Spped');
             }
-            else if(speed>60 && speed<80){
+            else{
+                if (speed > 60 && speed < 80) {
                 console.log('Warning: Close to Overspeeding');
             }
-            else{
+            else {
                 console.log('OverSpeed!: Penality Applied');
+            }
             }
         </pre>
     </pre>
@@ -183,23 +193,29 @@
         <b>CODE</b>
         <pre>
             let score = +prompt();
-            if(score>=90 && score<=100 ){
+            if (score >= 90 && score <= 100) {
                 console.log('Grade: A+');
             }
-            else if(score>=80 && score<=89){
-                console.log('Grade: A');
-            }
-            else if(score>=70 && score<=79){
-                console.log('Grade: B');
-            }
-            else if(score>=60 && score<=69){
-                console.log('Grade: C');
-            }
-            else if(score<60){
-                console.log('Grade: F');
-            }
-            else{
-                console.log('Please Enter the Marks Between 0 to 100');
+            else {
+                if (score >= 80 && score <= 89) {
+                    console.log('Grade: A');
+                } else {
+                    if (score >= 70 && score <= 79) {
+                        console.log('Grade: B');
+                    }
+                    else {
+                        if (score >= 60 && score <= 69) {
+                            console.log('Grade: C');
+                        }
+                        else {
+                            if (score < 60) {
+                                console.log('Grade: F');
+                            } else {
+                                console.log('Please Enter the Marks Between 0 to 100');
+                            }
+                        }
+                    }
+                }
             }
         </pre>
     </pre>
@@ -247,12 +263,15 @@
             if(purchaseAmount>1000){
                 console.log(`You have Purchased greaterthan 1000$, You have got 20% discount. The Final price is ${purchaseAmount- purchaseAmount*(20/100)}`)
             }
-            else if(purchaseAmount>=500 && purchaseAmount<=1000){
+            else {
+                if(purchaseAmount>=500 && purchaseAmount<=1000){
                     console.log(`You have Purchased between 500$ to 1000$, You have got 10% discount. The Final price is ${purchaseAmount- purchaseAmount*(10/100)}`)
+                }
+                else{
+                    console.log('You Purchased Lessthan 500$, You got NO DISCOUNT')
+                }
             }
-            else{
-                console.log('You Purchased Lessthan 500$, You got NO DISCOUNT')
-            }
+            
         </pre>
     </pre>
     <center><img src="./Q9.png" alt="" height="500px" width="700px"></center>
@@ -271,14 +290,18 @@
             if(age>60 && age<=100){
                 console.log('Ticket Price: $7')
             }
-            else if(age>=12 && age<=60){
-                console.log('Ticket Price: $10')
-            }
-            else if(age<12){
-                console.log('Ticket Price: $5')
-            }
             else{
-                console.log('Enter the AGE between 0 to 100')
+                if(age>=12 && age<=60){
+                    console.log('Ticket Price: $10')
+                }
+                else{
+                    if(age<12){
+                        console.log('Ticket Price: $5')
+                    }
+                    else{
+                        console.log('Enter the AGE between 0 to 100')
+                    }
+                }
             }
         </pre>
     </pre>
